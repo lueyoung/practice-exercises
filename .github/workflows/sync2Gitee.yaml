@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - name: 'Sync'
-        uses: lueyoung/hub-mirror-action
+        uses: lueyoung/hub-mirror-action@master
         with:
           src: github/lueyoung
           dst: gitee/lueyoung
