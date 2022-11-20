@@ -1,0 +1,24 @@
+name: 'Sync GitHub Repos To Gitee Bot'
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: 'Sync'
+        uses: lueyoung/hub-mirror-action@master
+        with:
+          src: github/lueyoung
+          dst: gitee/lueyoung
+          dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+          dst_token: ${{ secrets.GITEE_TOKEN }}
+          static_list: "practice-exercises"
+          account_type: user
+          clone_style: "https"
+          force_update: true
+          debug: true
+          timeout: '1h'
