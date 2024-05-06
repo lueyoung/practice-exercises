@@ -22,4 +22,6 @@ jobs:
           force_update: true
           debug: true
           timeout: '1h'
-          retry: 3
+        retry:
+          max_attempts: 3
+          timeout_minutes: 10
